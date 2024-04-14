@@ -1,4 +1,5 @@
 import {defineStore} from "pinia";
+import type {Ref} from "vue";
 import {ref} from "vue";
 
 interface User {
@@ -8,9 +9,9 @@ interface User {
 }
 
 export const useAuthStore = defineStore('auth.store', () => {
-    const isAuth = ref<boolean>(false);
-    const isLoading = ref<boolean>(false);
-    const user = ref<User>({});
+    const isAuth:Ref<boolean> = ref(false);
+    const isLoading:Ref<boolean> = ref(false);
+    const user:Ref<User> = ref({});
 
     const signIn = (): void => {
 
