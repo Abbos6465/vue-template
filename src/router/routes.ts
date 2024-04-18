@@ -1,6 +1,6 @@
-import type {RouteType} from "@/router/types";
+import type {RouteRecordRaw} from "vue-router";
 
-const routes: RouteType[] = [
+const routes: RouteRecordRaw[] = [
     {
         path: "/",
         name: "main",

@@ -21,11 +21,16 @@ export const useAuthStore = defineStore('auth.store', () => {
 
     }
 
+    const clearUser = (): void => {
+
+    }
+
     return {
         isAuth,
         isLoading,
         user,
         signIn,
-        fetchUser
+        fetchUser,
+        clearUser
     }
 })
