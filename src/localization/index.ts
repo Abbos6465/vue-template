@@ -3,15 +3,13 @@ import {getItem} from "@/utils/local.storage";
 
 const localeKey:'locale' = 'locale';
 const getLocalStorageLocale: string = getItem(localeKey);
-const defaultLocale:string = "uz";
-
 export const availableLocales: string[] = ['uz', 'ru'];
 
 const hasLocale = (locale:string): boolean => {
     return locale && availableLocales.includes(locale);
 }
 
-export const activeLocale:string = hasLocale(getLocalStorageLocale) ? getLocalStorageLocale : defaultLocale;
+export const activeLocale:string = hasLocale(getLocalStorageLocale) ? getLocalStorageLocale : 'uz';
 
 const {default: json} = await import(`@/localization/${activeLocale}.json`);
 
