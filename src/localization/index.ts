@@ -11,11 +11,11 @@ const hasLocale = (locale:string): boolean => {
 
 export const activeLocale:string = hasLocale(getLocalStorageLocale) ? getLocalStorageLocale : 'uz';
 
-const {default: json} = await import(`@/localization/${activeLocale}.json`);
+const {default: json} = await import(`./${activeLocale}.json`);
 
 export const changeLocale = async (locale:string):Promise<void> => {
     if(!hasLocale(locale)) return
-    const {default: json} = await import(`@/localization/${locale}.json`);
+    const {default: json} = await import(`./${locale}.json`);
     instance.global.locale.value = locale;
     instance.global.setLocaleMessage(locale, json)
 }
